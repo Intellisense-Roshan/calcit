@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="output.css">
   <title>Calc-it</title>
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function appendValue(value) {
       document.getElementById('display').value += value;
@@ -27,17 +26,15 @@
   </script>
 </head>
 
-<body class="bg-black min-h-screen flex flex-col items-center justify-center font-sans">
+<body class="bg-black min-h-screen flex items-center justify-center px-4 font-sans">
 
-  <header>
-    <h1 class="text-4xl text-white mb-10 font-semibold text-center font-size-3xl">Calc-it</h1>
+  <div class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-white p-6 rounded-2xl shadow-lg">
+    <header class="mb-6">
+      <h1 class="text-3xl sm:text-4xl text-center font-bold text-gray-800">Calc-it</h1>
+    </header>
 
-
-  </header>
-
-  <div class="bg-white p-6 rounded-2xl shadow-lg w-72">
     <input type="text" id="display" readonly
-      class="w-full mb-4 p-3 text-3xl text-right rounded-lg bg-gray-100 border-none outline-none" />
+      class="w-full mb-4 p-4 text-2xl sm:text-3xl text-right rounded-lg bg-gray-100 border-none outline-none" />
 
     <div class="grid grid-cols-4 gap-3">
       <button onclick="clearDisplay()" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">C</button>
