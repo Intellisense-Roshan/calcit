@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calc-it</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function appendValue(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      const display = document.getElementById('display');
+      try {
+        display.value = eval(display.value);
+      } catch (error) {
+        display.value = 'Error';
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-black min-h-screen flex flex-col items-center justify-center font-sans">
+
+  <header>
+    <h1 class="text-4xl text-white mb-10 font-semibold text-center font-size-3xl">Calc-it</h1>
+
+
+  </header>
+
+  <div class="bg-white p-6 rounded-2xl shadow-lg w-72">
+    <input type="text" id="display" readonly
+      class="w-full mb-4 p-3 text-3xl text-right rounded-lg bg-gray-100 border-none outline-none" />
+
+    <div class="grid grid-cols-4 gap-3">
+      <button onclick="clearDisplay()" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">C</button>
+      <button onclick="appendValue('7')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">7</button>
+      <button onclick="appendValue('8')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">8</button>
+      <button onclick="appendValue('9')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">9</button>
+
+      <button onclick="appendValue('/')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">/</button>
+      <button onclick="appendValue('4')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">4</button>
+      <button onclick="appendValue('5')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">5</button>
+      <button onclick="appendValue('6')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">6</button>
+
+      <button onclick="appendValue('*')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">*</button>
+      <button onclick="appendValue('1')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">1</button>
+      <button onclick="appendValue('2')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">2</button>
+      <button onclick="appendValue('3')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">3</button>
+
+      <button onclick="appendValue('-')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">-</button>
+      <button onclick="appendValue('0')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">0</button>
+      <button onclick="appendValue('.')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300">.</button>
+      <button onclick="calculate()" class="p-4 text-lg rounded-lg bg-green-400 hover:bg-green-500 text-white">=</button>
+
+      <button onclick="appendValue('+')" class="p-4 text-lg rounded-lg bg-gray-200 hover:bg-gray-300 col-span-4">+</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
